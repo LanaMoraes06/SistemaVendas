@@ -1,0 +1,30 @@
+@model SistemaVendas.Models.Cidade
+
+@{
+    ViewData["Title"] = "Detalhes da Cidade";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Detalhes da Cidade</h2>
+            <p class="text-muted">Ficha da região cadastrada.</p>
+        </div>
+
+        <div class="row mb-4 p-3" style="background-color: #FAFAFA; border-radius: 8px; border: 1px solid #EAEAEA;">
+            <div class="col-md-8 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Descrição</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Descricao)</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Sigla</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Sigla)</p>
+            </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-top d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">✏️ Editar</a>
+            <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar para Lista</a>
+        </div>
+    </div>
+</div>

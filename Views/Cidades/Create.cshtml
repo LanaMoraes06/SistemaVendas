@@ -1,0 +1,40 @@
+@model SistemaVendas.Models.Cidade
+
+@{
+    ViewData["Title"] = "Nova Cidade";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Adicionar Nova Cidade</h2>
+            <p class="text-muted">Cadastre uma nova região de atuação no sistema.</p>
+        </div>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            
+            <div class="row">
+                <div class="col-md-8 mb-3">
+                    <label asp-for="Descricao" class="control-label">Descrição (Nome da Cidade)</label>
+                    <input asp-for="Descricao" class="form-control" placeholder="Ex: São Paulo" />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Sigla" class="control-label">Sigla (Estado)</label>
+                    <input asp-for="Sigla" class="form-control" placeholder="Ex: SP" />
+                    <span asp-validation-for="Sigla" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top d-flex gap-2">
+                <button type="submit" class="btn btn-primary">💾 Salvar Cidade</button>
+                <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

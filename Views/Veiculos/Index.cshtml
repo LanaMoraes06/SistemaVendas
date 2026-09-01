@@ -1,0 +1,43 @@
+@model IEnumerable<SistemaVendas.Models.Veiculo>
+
+@{
+    ViewData["Title"] = "Veículos";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="search-title">Gerenciar Veículos</h2>
+            <a asp-action="Create" class="btn btn-primary">➕ Novo Veículo</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Cor</th>
+                    <th>Marca</th>
+                    <th>Valor</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Modelo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ano)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Cor)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Marca.Nome)</td>
+                    <td>R$ @Html.DisplayFor(modelItem => item.Valor)</td>
+                    <td class="text-end">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    </div>
+</div>

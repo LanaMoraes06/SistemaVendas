@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<div class="container webmotors-container mt-5">
+    
+    <!-- Bloco de Pesquisa -->
+    <div class="search-card">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="search-title">Encontre o registro que você precisa</h2>
+            <div class="toggle-group d-none d-md-flex">
+                <button class="toggle-btn active">🚘 Veículo</button>
+                <button class="toggle-btn">📇 Cliente</button>
+            </div>
+        </div>
+        <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Buscar por Modelo, Marca, Cliente ou ID da Venda">
+        </div>
+    </div>
+
+    <!-- Bloco de Módulos (Estilo "Lojas Oficiais") -->
+    <div class="modules-section">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="modules-title">Confira os Módulos do Sistema</h3>
+            <div class="toggle-group d-none d-md-flex">
+                 <button class="toggle-btn active">Tabelas</button>
+                 <button class="toggle-btn">Configurações</button>
+            </div>
+        </div>
+        
+        <div class="brand-row">
+            
+            <!-- Link Veículos -->
+            <a href="/Veiculos" class="brand-item">
+                <div class="brand-circle">
+                    <span class="brand-icon">🚘</span>
+                </div>
+                <span class="brand-name">Veículos</span>
+            </a>
+
+            <!-- Link Marcas -->
+            <a href="/Marcas" class="brand-item">
+                <div class="brand-circle">
+                    <span class="brand-icon">🏷️</span>
+                </div>
+                <span class="brand-name">Marcas</span>
+            </a>
+
+            <!-- Link Vendas -->
+            <a href="/Vendas" class="brand-item">
+                <div class="brand-circle">
+                    <span class="brand-icon">📊</span>
+                </div>
+                <span class="brand-name">Vendas</span>
+            </a>
+
+            <!-- Link Clientes -->
+            <a href="/Clientes" class="brand-item">
+                <div class="brand-circle">
+                    <span class="brand-icon">📇</span>
+                </div>
+                <span class="brand-name">Clientes</span>
+            </a>
+
+            <!-- Link Cidades -->
+            <a href="/Cidades" class="brand-item">
+                <div class="brand-circle">
+                    <span class="brand-icon">📍</span>
+                </div>
+                <span class="brand-name">Cidades</span>
+            </a>
+
+        </div>
+    </div>
+</div>

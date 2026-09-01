@@ -1,0 +1,45 @@
+@model SistemaVendas.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Detalhes do Veículo";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Detalhes do Veículo</h2>
+            <p class="text-muted">Ficha completa do automóvel no estoque.</p>
+        </div>
+
+        <div class="row mb-4 p-3" style="background-color: #FAFAFA; border-radius: 8px; border: 1px solid #EAEAEA;">
+            
+            <div class="col-md-4 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Modelo</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Modelo)</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Marca</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Marca.Nome)</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Ano / Cor</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Ano) - @Html.DisplayFor(model => model.Cor)</p>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Valor</h6>
+                <p class="fs-5 fw-bold text-success mb-0">R$ @Html.DisplayFor(model => model.Valor)</p>
+            </div>
+            <div class="col-md-8 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Situação</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Situacao)</p>
+            </div>
+
+        </div>
+
+        <div class="mt-4 pt-3 border-top d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">✏️ Editar</a>
+            <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar para Lista</a>
+        </div>
+    </div>
+</div>

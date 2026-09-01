@@ -1,0 +1,41 @@
+@model SistemaVendas.Models.Venda
+
+@{
+    ViewData["Title"] = "Cancelar Venda";
+}
+
+<div class="container mt-4">
+    <div class="search-card" style="border: 2px solid #ED1C24;">
+        <div class="mb-4">
+            <h2 class="search-title text-danger">⚠️ Confirmar Cancelamento</h2>
+            <p class="text-muted">Você está prestes a excluir este registro de venda. Esta ação removerá a transação do faturamento.</p>
+        </div>
+
+        <div class="row mb-4 p-3" style="background-color: #FFF0F0; border-radius: 8px;">
+            <div class="col-md-4 mb-3">
+                <h6 class="text-danger mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Data</h6>
+                <p class="fs-5 fw-bold text-dark mb-0">@Html.DisplayFor(model => model.DataVenda)</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-danger mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Cliente</h6>
+                <p class="fs-5 fw-bold text-dark mb-0">@Html.DisplayFor(model => model.Cliente.Nome)</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-danger mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Veículo</h6>
+                <p class="fs-5 fw-bold text-dark mb-0">@Html.DisplayFor(model => model.Veiculo.Modelo)</p>
+            </div>
+            <div class="col-md-12 mt-2">
+                <h6 class="text-danger mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Valor Cancelado</h6>
+                <p class="fs-4 fw-bold text-danger mb-0">R$ @Html.DisplayFor(model => model.ValorVenda)</p>
+            </div>
+        </div>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="mt-4 pt-3 border-top d-flex gap-2">
+                <button type="submit" class="btn btn-danger" style="background-color: #ED1C24; border-radius: 25px; padding: 8px 20px; font-weight: 600; color: white; border: none;">🗑️ Sim, Cancelar Venda</button>
+                <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

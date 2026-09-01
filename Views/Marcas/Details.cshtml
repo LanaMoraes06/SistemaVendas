@@ -1,0 +1,33 @@
+@model SistemaVendas.Models.Marca
+
+@{
+    ViewData["Title"] = "Detalhes da Marca";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Detalhes da Marca</h2>
+            <p class="text-muted">Informações completas do registro.</p>
+        </div>
+
+        <div class="row mb-4 p-3" style="background-color: #FAFAFA; border-radius: 8px; border: 1px solid #EAEAEA;">
+            
+            <div class="col-md-6 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">@Html.DisplayNameFor(model => model.Nome)</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Nome)</p>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">@Html.DisplayNameFor(model => model.Sigla)</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Sigla)</p>
+            </div>
+
+        </div>
+
+        <div class="mt-4 pt-3 border-top d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">✏️ Editar</a>
+            <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar para Lista</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,227 @@
+/* Fundo claro e tipografia limpa */
+body {
+    background-color: #FAFAFA;
+    color: #333333;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.webmotors-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Card de Busca Principal */
+.search-card {
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+}
+
+.search-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+/* Botões do tipo "Pill" (Carro / Moto na imagem) */
+.toggle-group {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-btn {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555555;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn.active {
+    background: #25282A; /* Cor escura do botão selecionado */
+    color: #FFFFFF;
+    border-color: #25282A;
+}
+
+/* Input de busca arredondado */
+.search-input-wrapper {
+    position: relative;
+    margin-top: 25px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888888;
+    font-size: 1.2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 18px 20px 18px 55px;
+    border: 1px solid #D6D6D6;
+    border-radius: 40px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #ED1C24; /* Detalhe vermelho ao clicar (estilo Webmotors) */
+}
+
+/* Seção dos Círculos (Lojas Oficiais na imagem) */
+.modules-section {
+    margin-top: 50px;
+}
+
+.modules-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1A1A1A;
+}
+
+.brand-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    width: 110px;
+}
+
+.brand-item:hover .brand-circle {
+    border-color: #ED1C24;
+    box-shadow: 0 4px 10px rgba(237, 28, 36, 0.15);
+}
+
+.brand-circle {
+    width: 110px;
+    height: 110px;
+    border: 1px solid #EAEAEA;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.brand-icon {
+    font-size: 3rem;
+}
+
+.brand-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+/* =========================================
+   ESTILOS GLOBAIS PARA O CRUD 
+   ========================================= */
+
+/* 1. Estilizando as Tabelas (Listagem) */
+.table {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden; /* Mantém as bordas arredondadas na tabela */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+    border: 1px solid #EAEAEA;
+    margin-top: 20px;
+}
+
+.table thead th {
+    background-color: #F8F9FA;
+    color: #555555;
+    border-bottom: 2px solid #EAEAEA;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 15px;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    color: #333333;
+    padding: 15px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+/* 2. Botões do CRUD (Formato pílula e cor vermelha) */
+.btn {
+    border-radius: 25px; 
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #ED1C24; /* O vermelho destaque */
+    border-color: #ED1C24;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #C8151D;
+    border-color: #C8151D;
+}
+
+/* 3. Links de ação na tabela (Edit | Details | Delete) */
+td a {
+    color: #ED1C24;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #FFF0F0; /* Fundo vermelhinho claro */
+    transition: all 0.2s;
+}
+
+td a:hover {
+    background-color: #ED1C24;
+    color: #FFFFFF;
+}
+
+/* 4. Formulários (Telas de Create e Edit) */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #D6D6D6;
+    padding: 12px 15px;
+    box-shadow: none;
+    background-color: #FAFAFA;
+}
+
+.form-control:focus {
+    background-color: #FFFFFF;
+    border-color: #ED1C24;
+    box-shadow: 0 0 0 0.2rem rgba(237, 28, 36, 0.15);
+}
+
+.control-label {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,43 @@
+@model SistemaVendas.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Detalhes do Cliente</h2>
+            <p class="text-muted">Ficha completa do comprador.</p>
+        </div>
+
+        <div class="row mb-4 p-3" style="background-color: #FAFAFA; border-radius: 8px; border: 1px solid #EAEAEA;">
+            <div class="col-md-6 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Nome</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Nome)</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Área</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Area)</p>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Idade</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Idade) anos</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Valor Hora</h6>
+                <p class="fs-5 fw-bold mb-0">R$ @Html.DisplayFor(model => model.ValorHora)</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Cidade</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Cidade.Descricao)</p>
+            </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-top d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">✏️ Editar</a>
+            <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar para Lista</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+@model SistemaVendas.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Novo Veículo";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Cadastrar Veículo</h2>
+            <p class="text-muted">Insira as informações do novo veículo no estoque.</p>
+        </div>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Modelo" class="control-label"></label>
+                    <input asp-for="Modelo" class="form-control" placeholder="Ex: HB20 Sense" />
+                    <span asp-validation-for="Modelo" class="text-danger"></span>
+                </div>
+                
+                <div class="col-md-3 mb-3">
+                    <label asp-for="Ano" class="control-label"></label>
+                    <input asp-for="Ano" class="form-control" placeholder="Ex: 2024" />
+                    <span asp-validation-for="Ano" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label asp-for="Cor" class="control-label"></label>
+                    <input asp-for="Cor" class="form-control" placeholder="Ex: Preto" />
+                    <span asp-validation-for="Cor" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="MarcaId" class="control-label">Marca</label>
+                    <select asp-for="MarcaId" class="form-control" asp-items="ViewBag.MarcaId">
+                        <option value="">Selecione uma marca...</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Valor" class="control-label"></label>
+                    <input asp-for="Valor" class="form-control" placeholder="0.00" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Situacao" class="control-label">Situação</label>
+                    <input asp-for="Situacao" class="form-control" placeholder="Ex: 1 (Disponível)" />
+                    <span asp-validation-for="Situacao" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top d-flex gap-2">
+                <button type="submit" class="btn btn-primary">💾 Salvar Veículo</button>
+                <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

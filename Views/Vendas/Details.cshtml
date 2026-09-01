@@ -1,0 +1,50 @@
+@model SistemaVendas.Models.Venda
+
+@{
+    ViewData["Title"] = "Detalhes da Venda";
+}
+
+<div class="container mt-4">
+    <div class="search-card">
+        <div class="mb-4">
+            <h2 class="search-title">Detalhes da Transação</h2>
+            <p class="text-muted">Extrato completo da venda realizada.</p>
+        </div>
+
+        <div class="row mb-4 p-3" style="background-color: #FAFAFA; border-radius: 8px; border: 1px solid #EAEAEA;">
+            
+            <div class="col-md-6 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Cliente</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Cliente.Nome)</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Veículo</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Veiculo.Modelo)</p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Data da Venda</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.DataVenda)</p>
+            </div>
+            <div class="col-md-8 mb-4">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Vendedor</h6>
+                <p class="fs-5 fw-bold mb-0">@Html.DisplayFor(model => model.Vendedor)</p>
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Valor de Custo</h6>
+                <p class="fs-5 fw-bold text-secondary mb-0">R$ @Html.DisplayFor(model => model.ValorCusto)</p>
+            </div>
+            <div class="col-md-6 mb-2">
+                <h6 class="text-muted mb-1" style="font-size: 0.85rem; text-transform: uppercase;">Valor Final da Venda</h6>
+                <p class="fs-4 fw-bold text-success mb-0">R$ @Html.DisplayFor(model => model.ValorVenda)</p>
+            </div>
+
+        </div>
+
+        <div class="mt-4 pt-3 border-top d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">✏️ Editar</a>
+            <a asp-action="Index" class="btn btn-light" style="border-radius: 25px; border: 1px solid #ddd;">Voltar para Lista</a>
+        </div>
+    </div>
+</div>
